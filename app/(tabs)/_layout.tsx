@@ -1,37 +1,31 @@
-import { Tabs } from 'expo-router';
-import React from 'react';
-
-import { TabBarIcon } from '@/components/navigation/TabBarIcon';
+import { View, Text } from 'react-native'
+import React from 'react'
+import { Tabs } from 'expo-router'
+import Entypo from '@expo/vector-icons/Entypo';
 import { Colors } from '@/constants/Colors';
-import { useColorScheme } from '@/hooks/useColorScheme';
+import Ionicons from '@expo/vector-icons/Ionicons';
 
 export default function TabLayout() {
-  const colorScheme = useColorScheme();
-
   return (
-    <Tabs
-      screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
-        headerShown: false,
-      }}>
-      <Tabs.Screen
-        name="index"
-        options={{
-          title: 'Home',
-          tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'home' : 'home-outline'} color={color} />
-          ),
-        }}
-      />
-      <Tabs.Screen
-        name="explore"
-        options={{
-          title: 'Explore',
-          tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'code-slash' : 'code-slash-outline'} color={color} />
-          ),
-        }}
-      />
+    <Tabs screenOptions={{
+      headerShown: false,
+      tabBarActiveTintColor: Colors.PRIMARY
+    }}>
+      <Tabs.Screen name="mytrip"
+      options={{
+        tabBarLabel: 'My Trip',
+        tabBarIcon: ({color}) => <Entypo name="location" size={24} color={color}/>
+      }}/>
+
+      <Tabs.Screen name="Discover" options={{
+        tabBarLabel: 'My Trip',
+        tabBarIcon: ({color}) => <Entypo name="globe" size={24} color={color} />
+      }}/>
+      
+      <Tabs.Screen name="Profile" options={{
+        tabBarLabel: 'My Trip',
+        tabBarIcon: ({color}) => <Ionicons name="people-circle-outline" size={24} color={color}/>
+      }}/>
     </Tabs>
-  );
+  )
 }
