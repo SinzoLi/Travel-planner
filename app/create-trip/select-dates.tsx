@@ -34,6 +34,7 @@ export default function selectDates() {
       endDate: endDate,
       totalNoOfDays: totalNoOfDays + 1,
     });
+    router.push('./select-budget.tsx')
   };
 
   useEffect(() => {

@@ -59,7 +59,7 @@ export default function SelectTraveler() {
           style={{
             marginVertical: 10
           }}>
-            <OptionCard option={item} selectedTraveler={selectedTraveler}/>
+            <OptionCard option={item} selectedOptions={selectedTraveler}/>
           </TouchableOpacity>
         )}
         keyExtractor={item => item.id.toString()}

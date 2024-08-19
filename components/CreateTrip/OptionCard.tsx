@@ -10,7 +10,7 @@ interface Option {
   people: string;
 }
 
-export default function OptionCard({ option, selectedTraveler }: { option: Option,  selectedTraveler: String }) {
+export default function OptionCard({ option, selectedOptions }: { option: Option,  selectedOptions: String }) {
   return (
     <View style={[{
       padding: 25,
@@ -19,7 +19,7 @@ export default function OptionCard({ option, selectedTraveler }: { option: Optio
       backgroundColor: Colors.LIGHT_GRAY,
       justifyContent: 'space-between',
       borderRadius: 15
-    }, selectedTraveler == option.title&&{borderWidth: 3}]}>
+    }, selectedOptions == option.title&&{borderWidth: 3}]}>
       <View>
         <Text style={{
           fontSize: 20,
@@ -52,3 +52,5 @@ export default function OptionCard({ option, selectedTraveler }: { option: Optio
     </View>
   )
 }
+
+export const AI_PROMPT = 'Generate travel plan for location: {location}, for {totalDay} Days and {totalNight} Night for {traveler} with a {budget} '
