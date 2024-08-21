@@ -1,4 +1,4 @@
-import { View, Text, ActivityIndicator } from 'react-native'
+import { View, Text, ActivityIndicator, ScrollView } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import { Colors } from '@/constants/Colors'
 import Ionicons from '@expo/vector-icons/Ionicons';
@@ -6,7 +6,6 @@ import StartNewTripCard from '@/components/MyTrips/StartNewTripCard';
 import { query, collection, where, getDocs } from 'firebase/firestore';
 import { auth, db } from '@/configs/FireBaseConfig'
 import UserTripList from '@/components/MyTrips/UserTripList';
-import { ScrollView } from 'react-native-gesture-handler';
 
 export default function Mytrip() {
   const [userTrip, setUserTrip] = useState([]);
